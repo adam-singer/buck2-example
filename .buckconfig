@@ -1,0 +1,26 @@
+[repositories]
+root = .
+prelude = prelude
+toolchains = toolchains
+none = none
+
+[repository_aliases]
+config = prelude
+ovr_config = prelude
+fbcode = none
+fbsource = none
+fbcode_macros = none
+buck = none
+
+[parser]
+target_platform_detector_spec = target:root//...->prelude//platforms:default
+
+[buck2_re_client]
+action_cache_address = grpc://localhost:50051
+engine_address = grpc://localhost:50051
+cas_address = grpc://localhost:50051
+tls = false
+instance_name = main
+
+[build]
+  execution_platforms = root//platforms:platforms
