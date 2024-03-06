@@ -14,7 +14,7 @@ genrule(
       echo whoami > $OUT;
       echo echo ${PWD} >> $OUT;
       echo ls -al >> $OUT;
-      echo 'find . -type f -exec ls -l {} \\;' >> $OUT;
+      echo 'find ${PWD} -type f -exec ls -l {} \\;' >> $OUT;
       chmod +x $OUT
       """
 )
